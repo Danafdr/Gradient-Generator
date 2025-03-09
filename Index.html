@@ -1,0 +1,85 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gradient Generator</title>
+        <link rel="stylesheet" href="Style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    
+    <body>
+        <div class="header">
+            <div class="help-icon">
+                <i class="fas fa-question-circle" id="help-icon"></i>
+            </div>
+        </div>
+        <div class="container">
+            <div class="color-picker">
+                <div class="color-box">
+                    <input type="color" id="color-picker1" class="color-picker-input" value="#132663">
+                    <div class="color-preview" id="color-preview1" style="background-color: #132663;"></div>
+                    <input type="text" id="color1" value="#132663" readonly>
+                    <button class="lock-btn">🔓</button>
+                </div>
+                <div class="color-box">
+                    <input type="color" id="color-picker2" class="color-picker-input" value="#FF0000">
+                    <div class="color-preview" id="color-preview2" style="background-color: #FF0000;"></div>
+                    <input type="text" id="color2" value="#FF0000" readonly>
+                    <button class="lock-btn">🔓</button>
+                </div>
+            </div>
+            <div class="gradient-slider-container">
+                <span id="left-percentage">50%</span>
+                <input type="range" id="gradient-slider" min="0" max="100" value="50">
+                <span id="right-percentage">50%</span>
+            </div>
+            <div class="controls">
+                <div class="control-row">
+                    <div class="rotation-container">
+                        <div id="rotary-switch-container">
+                            <div id="rotary-switch">
+                                <div id="rotary-indicator"></div>
+                            </div>
+                            <input type="number" id="rotation-input" value="45" min="0" max="360" step="1">
+                        </div>
+                    </div>
+                    <button id="hide-ui">Hide UI</button>
+                </div>
+                <div class="control-row">
+                    <button id="flip-vertical">Flip Vertical</button>
+                    <button id="flip-horizontal">Flip Horizontal</button>
+                </div>
+                <button id="generate-btn">Generate New Colors</button>
+            </div>
+        </div>
+        <div class="watermark">
+            made by @danafdr
+            <a href="https://instagram.com/danafdr_" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div id="copy-notification" class="copy-notification">Hex code copied!</div>
+        <div id="help-popup" class="help-popup">
+            <div class="help-content">
+                <span class="close-btn" id="close-help">&times;</span>
+                <h2 style="text-align: center; color: gray;">Gradient Generator</h2>
+                <h3 style="text-align: center; color: gray;">by @danafdr</h3>
+                <h4 style="text-align: center; color: gray;">Version 1.0.1</h4>
+                <br>
+                <ul style="color: gray;">
+                    <li>Click the color box to pick a color or enter a hex code.</li>
+                    <li>Double-click the hex code to copy it.</li>
+                    <li>Use the slider to adjust how much each color appears.</li>
+                    <li>Rotate the gradient using the rotate icon or number box.</li>
+                    <li>Hide UI to preview the gradient without buttons.</li>
+                    <li>Flip colors horizontally or vertically without changing the hex.</li>
+                    <li>Click "Generate New Colors" for a new gradient.</li>
+                </ul>    
+            </div>
+        </div>
+        <script src="Script.js"></script>
+    </body>
+    
+    </html>
