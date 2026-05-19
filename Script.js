@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const tabPanels      = document.querySelectorAll(".tab-panel");
     const tabIndicator   = document.querySelector(".tab-indicator");
     const bgGlow         = document.getElementById("background-glow");
-    const sliderRatio    = document.getElementById("slider-ratio");
+    const sliderRatio    = null; // removed
+    const labelLeft      = document.getElementById("label-left");
+    const labelRight     = document.getElementById("label-right");
 
     // ── State ──
     let colors  = ["#132663", "#FF0000"];
@@ -44,8 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
         document.body.style.background = bgGrad;
         gradientSlider.style.background = `linear-gradient(to right, ${colors[0]} 0%, ${colors[0]} ${balance * 0.6}%, ${colors[1]} ${100 - (100 - balance) * 0.6}%, ${colors[1]} 100%)`;
 
-        if (sliderRatio) {
-            sliderRatio.textContent = `${balance}/${100 - balance}`;
+        if (labelLeft && labelRight) {
+            labelLeft.textContent = `${balance}%`;
+            labelRight.textContent = `${100 - balance}%`;
         }
 
         // Always stay dark — no light-theme toggling

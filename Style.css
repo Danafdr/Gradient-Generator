@@ -230,19 +230,10 @@ body {
     border-radius:12px; width:100%;
 }
 .slider-labels { display:flex; justify-content:space-between; align-items:center; width:100%; }
-.slider-labels span { font-size:0.75rem; color:var(--text-primary); font-weight:600; letter-spacing:0.05em; opacity: 0.9; transition: color 0.4s ease; }
-#slider-ratio {
+.slider-labels span {
+    font-size:0.75rem; color:var(--text-primary); font-weight:600;
+    letter-spacing:0.05em; opacity: 0.9; transition: color 0.4s ease;
     font-family: var(--font-mono, monospace);
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    padding: 2px 8px;
-    border-radius: 6px;
-    font-size: 0.72rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.85) !important;
-    letter-spacing: 0;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
 }
 
 .gradient-slider-container input[type="range"] {
