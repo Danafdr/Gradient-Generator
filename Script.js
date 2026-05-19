@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const tabPanels      = document.querySelectorAll(".tab-panel");
     const tabIndicator   = document.querySelector(".tab-indicator");
     const bgGlow         = document.getElementById("background-glow");
+    const sliderRatio    = document.getElementById("slider-ratio");
 
     // ── State ──
     let colors  = ["#132663", "#FF0000"];
@@ -42,6 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const bgGrad = `linear-gradient(${angle}deg, ${colors[0]} 0%, ${colors[0]} ${balance * 0.6}%, ${colors[1]} ${100 - (100 - balance) * 0.6}%, ${colors[1]} 100%)`;
         document.body.style.background = bgGrad;
         gradientSlider.style.background = `linear-gradient(to right, ${colors[0]} 0%, ${colors[0]} ${balance * 0.6}%, ${colors[1]} ${100 - (100 - balance) * 0.6}%, ${colors[1]} 100%)`;
+
+        if (sliderRatio) {
+            sliderRatio.textContent = `${balance}/${100 - balance}`;
+        }
 
         // Always stay dark — no light-theme toggling
         document.body.classList.remove("light-theme");
