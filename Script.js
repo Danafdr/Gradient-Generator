@@ -42,13 +42,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // ── Gradient ──
     function updateGradient() {
-        const bgGrad = `linear-gradient(${angle}deg, ${colors[0]} 0%, ${colors[0]} ${balance * 0.6}%, ${colors[1]} ${100 - (100 - balance) * 0.6}%, ${colors[1]} 100%)`;
+        const bgGrad = `linear-gradient(${angle}deg, ${colors[0]} 0%, ${colors[0]} ${(100 - balance) * 0.6}%, ${colors[1]} ${100 - balance * 0.6}%, ${colors[1]} 100%)`;
         document.body.style.background = bgGrad;
-        gradientSlider.style.background = `linear-gradient(to right, ${colors[0]} 0%, ${colors[0]} ${balance * 0.6}%, ${colors[1]} ${100 - (100 - balance) * 0.6}%, ${colors[1]} 100%)`;
+        gradientSlider.style.background = `linear-gradient(to right, ${colors[0]} 0%, ${colors[0]} ${(100 - balance) * 0.6}%, ${colors[1]} ${100 - balance * 0.6}%, ${colors[1]} 100%)`;
 
         if (labelLeft && labelRight) {
-            labelLeft.textContent = `${balance}%`;
-            labelRight.textContent = `${100 - balance}%`;
+            labelLeft.textContent = `${100 - balance}%`;
+            labelRight.textContent = `${balance}%`;
         }
 
         // Always stay dark — no light-theme toggling
