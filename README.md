@@ -36,4 +36,4 @@ Since this is built using vanilla web technologies, there are no dependencies or
    ```bash
    git clone https://github.com/Danafdr/Gradient-Generator.git
    ```
-2. Open `Index.html` directly in any web browser, or serve it using a local server (e.g., Live Server in VS Code, or Laragon).
+2. Open `index.html` directly in any web browser, or serve it using a local server (e.g., Live Server in VS Code, or Laragon).
