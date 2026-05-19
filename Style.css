@@ -69,18 +69,23 @@ body {
     min-height: 100vh;
     display: flex; justify-content:center; align-items:center; flex-direction:column;
     transition: background 0.6s ease;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 40px 0;
+    box-sizing: border-box;
+    will-change: background;
 }
 
 .background-glow {
     position: absolute;
     width: 80vw; height: 80vh;
-    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    top: 50%; left: 50%; transform: translate(-50%, -50%) translateZ(0);
     border-radius: 50%;
     filter: blur(140px);
     z-index: 0;
     transition: background 0.6s ease;
     opacity: 0.8;
+    will-change: background, filter;
 }
 
 /* ── Header ── */
@@ -666,9 +671,14 @@ button:active { transform:translateY(0); box-shadow:none; }
         margin-bottom: 4px;
     }
     
-    button {
+    .controls button:not(#undo-btn) {
         flex: 1;
         min-width: 120px;
+    }
+    
+    .controls button {
+        padding: 10px 14px;
+        font-size: 0.78rem;
     }
     
     #copy-css-btn, #generate-btn {
